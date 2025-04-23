@@ -1,4 +1,4 @@
-#Клиент-серверное приложение Kolyma Adventurer App
+#Клиент-серверное приложение Kolyma Adventurer App ^^
 
 Это мобильное приложение для Android, работающее с сервером на Java (Spring Boot) через REST API.
 
