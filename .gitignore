@@ -1,0 +1,17 @@
+#======== Android Studio ========
+*.iml
+.gradle/
+local.properties
+.idea/
+build/
+captures/
+output/
+*.apk
+
+#======== IntelliJ IDEA ========
+*.class
+*.log
+/out/
+target/
+*.ipr
+*.iws
