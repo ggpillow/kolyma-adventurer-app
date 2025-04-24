@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AdventureApp"
+rootProject.name = "client-android"
 include(":app")
  
