@@ -25,7 +25,7 @@ public class ScenarioController {
                         s.getTitle(),
                         s.getStartDescr(),
                         s.getMiniDescription(),
-                        s.getImageURL(),
+                        "http://10.0.2.2:8080/" + s.getImageURL(),
                         s.getDifficulty()
                 ))
                 .toList();

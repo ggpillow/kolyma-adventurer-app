@@ -1,4 +1,8 @@
 package com.example.demo.repository;
 
-public class SchemeRepository {
+import com.example.demo.model.Scheme;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SchemeRepository  extends JpaRepository<Scheme, Long> {
+    Scheme findByIdScenarios(Long idScenarios);
 }
