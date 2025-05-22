@@ -11,9 +11,9 @@ CREATE TABLE scenarios (
 -- Таблица схем --
 CREATE TABLE schemes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    scenarios_id INTEGER NOT NULL,
+    scenario_id INTEGER NOT NULL,
     image_schemes TEXT NOT NULL,
-    FOREIGN KEY(scenarios_id) REFERENCES scenarios(id)
+    FOREIGN KEY(scenario_id) REFERENCES scenarios(id)
 );
 
 -- Таблица эпиграфов --
