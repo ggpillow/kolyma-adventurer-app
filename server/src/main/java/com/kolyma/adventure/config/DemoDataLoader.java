@@ -26,19 +26,19 @@ public class DemoDataLoader {
                 Scenario s1 = new Scenario(null, "Исчезновение шамана",
                         "В уединённой долине пропал известный эвенкийский шаман. Вам предстоит выяснить, что случилось...",
                         "Тайна исчезновения в тайге",
-                        "images/pereval.jpg",
+                        "images/scenarios/pereval.jpg",
                         "Средне");
 
                 Scenario s2 = new Scenario(null, "Тени над Колымой",
                         "На шахте №7 происходят странные события: техника выходит из строя, рабочие исчезают...",
                         "Мистика на севере",
-                        "images/prizim.png",
+                        "images/scenarios/prizim.png",
                         "Сложно");
 
                 Scenario s3 = new Scenario(null, "Следы на снегу",
                         "После снежной бури у подножия гор обнаружены странные следы, ведущие в пещеры...",
                         "Ледяной след неизвестного существа",
-                        "images/rain.jpg",
+                        "images/scenarios/rain.jpg",
                         "Легко");
 
                 List<Scenario> scenarios = List.of(s1, s2, s3);
