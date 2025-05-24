@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/epigraphs")
+@RequestMapping("/epigraphs")
 public class EpigraphController {
 
     private final EpigraphService epigraphService;

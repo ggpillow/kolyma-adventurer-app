@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/schemes")
+@RequestMapping("/schemes")
 public class SchemeController {
 
     private final SchemeService schemeService;
