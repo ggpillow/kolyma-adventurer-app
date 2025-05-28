@@ -19,12 +19,16 @@ public class EpigraphController {
     }
 
     @GetMapping
-    public ResponseEntity<List<EpigraphDTO>> getAllEpigraphs() {
-        var dtos = epigraphService.getAll().stream()
+    public ResponseEntity<List<EpigraphDTO>> getAll() {
+        var list = epigraphService.getAll().stream()
                 .map(EpigraphMapper::toDTO)
                 .toList();
-        if (dtos.isEmpty()) return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(dtos);
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/random")
+    public ResponseEntity<EpigraphDTO> getRandom() {
+        return ResponseEntity.ok(EpigraphMapper.toDTO(epigraphService.getRandom()));
     }
 
     @GetMapping("/{id}")

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class EpigraphService {
@@ -22,5 +23,11 @@ public class EpigraphService {
 
     public Optional<Epigraph> getById(Long id) {
         return epigraphRepository.findById(id);
+    }
+
+    public Epigraph getRandom() {
+        List<Epigraph> all = epigraphRepository.findAll();
+        if (all.isEmpty()) throw new RuntimeException("Нет эпиграфов");
+        return all.get(new Random().nextInt(all.size()));
     }
 }

@@ -20,7 +20,11 @@ public class ParagraphService {
         return paragraphRepository.findAll();
     }
 
-    public Optional<Paragraph> getById(Long id) {
-        return paragraphRepository.findById(id);
+    public List<Paragraph> getById(Long id) {
+        return paragraphRepository.findAllById(List.of(id)); // Вернёт список даже по одному ID
+    }
+
+    public List<Paragraph> getByParagraphNumber(int number) {
+        return paragraphRepository.findByParagraphNumber(number);
     }
 }

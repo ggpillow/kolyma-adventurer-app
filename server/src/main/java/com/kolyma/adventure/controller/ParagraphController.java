@@ -28,10 +28,20 @@ public class ParagraphController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ParagraphDTO> getById(@PathVariable Long id) {
-        return paragraphService.getById(id)
+    public ResponseEntity<List<ParagraphDTO>> getById(@PathVariable Long id) {
+        var list = paragraphService.getById(id).stream()
                 .map(ParagraphMapper::toDTO)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .toList();
+        if (list.isEmpty()) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/number/{number}")
+    public ResponseEntity<List<ParagraphDTO>> getByParagraphNumber(@PathVariable int number) {
+        var list = paragraphService.getByParagraphNumber(number).stream()
+                .map(ParagraphMapper::toDTO)
+                .toList();
+        if (list.isEmpty()) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(list);
     }
 }
