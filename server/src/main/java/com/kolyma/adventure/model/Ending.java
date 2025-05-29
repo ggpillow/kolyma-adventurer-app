@@ -25,7 +25,7 @@ public class Ending {
     @NotBlank(message = "Описание концовки обязательно")
     private String endDescr;
 
-    @ManyToOne(fetch = FetchType.LAZY) //связь много концовок, но один сценарий
-    @JoinColumn(name = "scenarios_id") //Создай колонку id_scenario  таблице endings которая будет внешним ключом для scenario
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "scenario_id")
     private Scenario scenario;
 }
