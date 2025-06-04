@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class EndingDTO {
+
     @NotNull
     private Long id;
 
@@ -16,6 +17,8 @@ public class EndingDTO {
 
     @NotBlank
     private String endDescr;
+
+    private String altQuestion;
 
     @NotNull
     private Long scenarioId;

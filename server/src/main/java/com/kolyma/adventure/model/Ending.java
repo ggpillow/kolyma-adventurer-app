@@ -25,6 +25,9 @@ public class Ending {
     @NotBlank(message = "Описание концовки обязательно")
     private String endDescr;
 
+    @Column(name = "alt_question")
+    private String altQuestion;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "scenario_id")
     private Scenario scenario;

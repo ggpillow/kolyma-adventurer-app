@@ -19,8 +19,7 @@ CREATE TABLE schemes (
 -- Таблица эпиграфов --
 CREATE TABLE epigraphs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    quote TEXT NOT NULL,
-    image_epigraph TEXT NOT NULL
+    quote TEXT NOT NULL
 );
 
 -- Таблица абзацев --
@@ -35,6 +34,7 @@ CREATE TABLE endings (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title_ending TEXT NOT NULL,
     end_descr TEXT NOT NULL,
+    alt_question TEXT,
     scenario_id INTEGER NOT NULL,
     FOREIGN KEY (scenario_id) REFERENCES scenarios(id)
 );

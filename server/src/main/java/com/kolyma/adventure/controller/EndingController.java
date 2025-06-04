@@ -18,6 +18,7 @@ public class EndingController {
         this.endingService = endingService;
     }
 
+    // Получить список концовок по ID сценария
     @GetMapping("/scenario/{scenarioId}")
     public ResponseEntity<List<EndingDTO>> getEndingsByScenario(@PathVariable Long scenarioId) {
         var dtos = endingService.getByScenarioId(scenarioId).stream()
@@ -25,5 +26,19 @@ public class EndingController {
                 .toList();
         if (dtos.isEmpty()) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(dtos);
+    }
+
+    // Получить одну концовку по ID сценария и названию концовки
+    @GetMapping("/scenario/{scenarioId}/title")
+    public ResponseEntity<EndingDTO> getEndingByScenarioAndTitle(
+            @PathVariable Long scenarioId,
+            @RequestParam String titleEnding
+    ) {
+        try {
+            var ending = endingService.getByScenarioIdAndTitle(scenarioId, titleEnding);
+            return ResponseEntity.ok(EndingMapper.toDTO(ending));
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build(); // или верни текст ошибки через badRequest()
+        }
     }
 }
