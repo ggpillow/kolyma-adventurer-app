@@ -13,7 +13,4 @@ public class EpigraphDTO {
 
     @NotBlank
     private String quote;
-
-    @NotBlank
-    private String imageEpigraph;
 }

@@ -19,8 +19,4 @@ public class Epigraph {
 
     @NotBlank(message = "Цитата обязательна")
     private String quote;
-
-    @Column(name = "image_epigraph")
-    @NotBlank(message = "Путь к изображению обязателен")
-    private String imageEpigraph;
 }
