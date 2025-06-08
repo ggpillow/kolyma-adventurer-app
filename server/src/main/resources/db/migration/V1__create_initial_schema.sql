@@ -38,3 +38,19 @@ CREATE TABLE endings (
     scenario_id INTEGER NOT NULL,
     FOREIGN KEY (scenario_id) REFERENCES scenarios(id)
 );
+
+-- Таблица ресурсов
+CREATE TABLE resources (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL UNIQUE
+);
+
+-- Таблица комбинаций предметов
+CREATE TABLE item_combinations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    resource1_id INTEGER NOT NULL,
+    resource2_id INTEGER NOT NULL,
+    result_item TEXT NOT NULL,
+    FOREIGN KEY(resource1_id) REFERENCES resources(id),
+    FOREIGN KEY(resource2_id) REFERENCES resources(id)
+);
