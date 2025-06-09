@@ -266,7 +266,11 @@ INSERT INTO item_combinations(first_resource_id, second_resource_id, result_item
 (8, 6, 'Компас', 'image/items/compass.jpg'),
 (4, 4, 'Нарукавники', 'image/items/armbands');
 
-
+-- Привязка аудиофайлов к сценариям
+INSERT INTO scenario_audio (scenario_id, audio_url) VALUES
+(1, 'audio/scenario_audio_pereval.mp3'),
+(2, 'audio/scenario_audio_rain.mp3'),
+(3, 'audio/scenario_audio_prizim.mp3');
 
 
 

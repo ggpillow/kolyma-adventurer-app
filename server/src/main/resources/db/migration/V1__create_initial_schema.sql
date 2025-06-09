@@ -55,3 +55,11 @@ CREATE TABLE item_combinations (
     FOREIGN KEY (first_resource_id) REFERENCES resources(id),
     FOREIGN KEY (second_resource_id) REFERENCES resources(id)
 );
+
+-- Таблица озвучек к сценариям
+CREATE TABLE scenario_audio (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    scenario_id INTEGER NOT NULL,
+    audio_url TEXT NOT NULL,
+    FOREIGN KEY (scenario_id) REFERENCES scenarios(id)
+);
