@@ -48,9 +48,10 @@ CREATE TABLE resources (
 -- Таблица комбинаций предметов
 CREATE TABLE item_combinations (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    resource1_id INTEGER NOT NULL,
-    resource2_id INTEGER NOT NULL,
+    first_resource_id INTEGER NOT NULL,
+    second_resource_id INTEGER NOT NULL,
     result_item TEXT NOT NULL,
-    FOREIGN KEY(resource1_id) REFERENCES resources(id),
-    FOREIGN KEY(resource2_id) REFERENCES resources(id)
+    image_items TEXT,
+    FOREIGN KEY (first_resource_id) REFERENCES resources(id),
+    FOREIGN KEY (second_resource_id) REFERENCES resources(id)
 );

@@ -24,4 +24,7 @@ public class ItemCombination {
 
     @Column(name = "result_item", nullable = false)
     private String resultItem;
+
+    @Column(name = "image_items")
+    private String imageItems;
 }

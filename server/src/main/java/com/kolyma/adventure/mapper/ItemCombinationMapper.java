@@ -11,7 +11,8 @@ public class ItemCombinationMapper {
                 entity.getId(),
                 entity.getResource1().getId(),
                 entity.getResource2().getId(),
-                entity.getResultItem()
+                entity.getResultItem(),
+                entity.getImageItems()
         );
     }
 
@@ -21,6 +22,7 @@ public class ItemCombinationMapper {
         entity.setResource1(res1);
         entity.setResource2(res2);
         entity.setResultItem(dto.getResultItem());
+        entity.setImageItems(dto.getImageItems());
         return entity;
     }
 }

@@ -249,22 +249,22 @@ INSERT INTO resources(name) VALUES
 ('Сырая еда');
 
 --Комбинации
-INSERT INTO item_combinations(resource1_id, resource2_id, result_item) VALUES
-(1, 3, 'Лук'),
-(6, 3, 'Удочка'),
-(1, 2, 'Факел'),
-(5, 6, 'Топор'),
-(6, 1, 'Нож'),
-(2, 7, 'Повязка'),
-(7, 8, 'Травяной чай'),
-(2, 4, 'Рюкзак'),
-(4, 1, 'Пугало'),
-(9, 8, 'Готовая еда'),
-(2, 3, 'Спальник'),
-(6, 6, 'Капкан'),
-(3, 7, 'Оберег'),
-(8, 6, 'Компас'),
-(4, 4, 'Нарукавники');
+INSERT INTO item_combinations(first_resource_id, second_resource_id, result_item, image_items) VALUES
+(1, 3, 'Лук', 'image/items/bow'),
+(6, 3, 'Удочка', 'image/items/fishingRod'),
+(1, 2, 'Факел', 'image/items/flame'),
+(5, 6, 'Топор', 'image/items/axe.jpg'),
+(6, 1, 'Нож', 'image/items/knife'),
+(2, 7, 'Повязка', 'image/items/bandage.jpg'),
+(7, 8, 'Травяной чай', 'image/items/tea'),
+(2, 4, 'Рюкзак', 'image/items/backpack'),
+(4, 1, 'Пугало', 'image/items/scarecrow'),
+(9, 8, 'Готовая еда', 'image/items/madeFood.jpg'),
+(2, 3, 'Спальник', 'image/items/sleepingBag.jpg'),
+(6, 6, 'Капкан', 'image/items/trap'),
+(3, 7, 'Оберег', 'image/items/amulet'),
+(8, 6, 'Компас', 'image/items/compass.jpg'),
+(4, 4, 'Нарукавники', 'image/items/armbands');
 
 
 

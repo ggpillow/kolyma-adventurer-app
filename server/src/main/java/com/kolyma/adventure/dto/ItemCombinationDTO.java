@@ -17,4 +17,7 @@ public class ItemCombinationDTO {
 
     @NotNull
     private String resultItem;
+
+    @NotNull
+    private String imageItems;
 }
