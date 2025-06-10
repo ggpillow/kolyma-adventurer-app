@@ -12,7 +12,8 @@ public class EpigraphMapper {
         if (epigraph == null) return null;
         return new EpigraphDTO(
                 epigraph.getId(),
-                epigraph.getQuote()
+                epigraph.getQuote(),
+                epigraph.getAuthor()
         );
     }
 
@@ -21,6 +22,7 @@ public class EpigraphMapper {
         Epigraph epigraph = new Epigraph();
         epigraph.setId(dto.getId());
         epigraph.setQuote(dto.getQuote());
+        epigraph.setAuthor(dto.getAuthor());
         return epigraph;
     }
 }

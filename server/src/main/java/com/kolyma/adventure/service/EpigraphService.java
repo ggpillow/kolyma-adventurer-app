@@ -12,6 +12,7 @@ import java.util.Random;
 public class EpigraphService {
 
     private final EpigraphRepository epigraphRepository;
+    private final Random random = new Random();
 
     public EpigraphService(EpigraphRepository epigraphRepository) {
         this.epigraphRepository = epigraphRepository;
@@ -28,6 +29,6 @@ public class EpigraphService {
     public Epigraph getRandom() {
         List<Epigraph> all = epigraphRepository.findAll();
         if (all.isEmpty()) throw new RuntimeException("Нет эпиграфов");
-        return all.get(new Random().nextInt(all.size()));
+        return all.get(random.nextInt(all.size()));
     }
 }

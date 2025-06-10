@@ -25,4 +25,8 @@ public class Paragraph {
     @NotBlank(message = "Текст абзаца обязателен")
     @Column(name = "paragraph_descr", nullable = false)
     private String paragraphDescr;
+
+    @ManyToOne
+    @JoinColumn(name = "effect_id")
+    private Effect effect;
 }

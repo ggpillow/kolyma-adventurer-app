@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/paragraphs")
@@ -28,20 +29,18 @@ public class ParagraphController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<ParagraphDTO>> getById(@PathVariable Long id) {
-        var list = paragraphService.getById(id).stream()
-                .map(ParagraphMapper::toDTO)
-                .toList();
-        if (list.isEmpty()) return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(list);
+    public ResponseEntity<ParagraphDTO> getById(@PathVariable Long id) {
+        Optional<ParagraphDTO> dto = paragraphService.getById(id)
+                .map(ParagraphMapper::toDTO);
+        return dto.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/number/{number}")
-    public ResponseEntity<List<ParagraphDTO>> getByParagraphNumber(@PathVariable int number) {
-        var list = paragraphService.getByParagraphNumber(number).stream()
-                .map(ParagraphMapper::toDTO)
-                .toList();
-        if (list.isEmpty()) return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(list);
+    public ResponseEntity<ParagraphDTO> getByParagraphNumber(@PathVariable int number) {
+        Optional<ParagraphDTO> dto = paragraphService.getByParagraphNumber(number)
+                .map(ParagraphMapper::toDTO);
+        return dto.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

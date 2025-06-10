@@ -8,9 +8,13 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class EpigraphDTO {
+
     @NotNull
     private Long id;
 
     @NotBlank
     private String quote;
+
+    @NotBlank
+    private String author;
 }

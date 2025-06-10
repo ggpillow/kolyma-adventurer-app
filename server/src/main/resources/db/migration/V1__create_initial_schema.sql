@@ -19,14 +19,25 @@ CREATE TABLE schemes (
 -- Таблица эпиграфов --
 CREATE TABLE epigraphs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    quote TEXT NOT NULL
+    quote TEXT NOT NULL,
+    author TEXT NOT NULL
 );
 
--- Таблица абзацев --
+-- Таблица абзацев с привязкой к эффекту
 CREATE TABLE paragraphs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    paragraph_number INTEGER NOT NULL,
-    paragraph_descr TEXT NOT NULL
+    paragraph_number INTEGER NOT NULL UNIQUE,
+    paragraph_descr TEXT NOT NULL,
+    effect_id INTEGER,
+    FOREIGN KEY (effect_id) REFERENCES effects(id)
+);
+
+-- Таблица эффектов
+CREATE TABLE effects (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    description TEXT,
+    effect_type TEXT NOT NULL CHECK (effect_type IN ('positive', 'negative', 'choice'))
 );
 
 -- Таблица концовок --
@@ -63,3 +74,5 @@ CREATE TABLE scenario_audio (
     audio_url TEXT NOT NULL,
     FOREIGN KEY (scenario_id) REFERENCES scenarios(id)
 );
+
+

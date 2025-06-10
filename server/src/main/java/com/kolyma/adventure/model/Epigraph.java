@@ -18,5 +18,10 @@ public class Epigraph {
     private Long id;
 
     @NotBlank(message = "Цитата обязательна")
+    @Column(nullable = false)
     private String quote;
+
+    @NotBlank(message = "Автор обязателен")
+    @Column(nullable = false)
+    private String author;
 }

@@ -9,8 +9,7 @@ import lombok.Data;
 public class ParagraphDTO {
     @NotNull
     private Long id;
-
     private int paragraphNumber;
-
     private String paragraphDescr;
+    private Long effectId;
 }
