@@ -16,6 +16,6 @@ public class ItemCombinationService {
     }
 
     public Optional<ItemCombination> findByResources(Long res1Id, Long res2Id) {
-        return repo.findByResource1_IdAndResource2_Id(res1Id, res2Id);
+        return repo.findByResourcePair(res1Id, res2Id);
     }
 }
