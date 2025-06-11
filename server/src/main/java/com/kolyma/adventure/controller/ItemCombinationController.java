@@ -8,6 +8,8 @@ import com.kolyma.adventure.service.ResourceService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/item-combinations")
 public class ItemCombinationController {
@@ -26,5 +28,14 @@ public class ItemCombinationController {
                 .map(ItemCombinationMapper::toDTO)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ItemCombinationDTO>> getAllCombinations() {
+        var all = combinationService.getAll()
+                .stream()
+                .map(ItemCombinationMapper::toDTO)
+                .toList();
+        return ResponseEntity.ok(all);
     }
 }
