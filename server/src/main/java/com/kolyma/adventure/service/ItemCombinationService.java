@@ -3,6 +3,7 @@ package com.kolyma.adventure.service;
 import com.kolyma.adventure.model.ItemCombination;
 import com.kolyma.adventure.repository.ItemCombinationRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ public class ItemCombinationService {
         this.repo = repo;
     }
 
+    @Transactional(readOnly = true)
     public Optional<ItemCombination> findByResources(Long res1Id, Long res2Id) {
         return repo.findByResourcePair(res1Id, res2Id);
     }

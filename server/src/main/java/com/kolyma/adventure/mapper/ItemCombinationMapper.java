@@ -7,6 +7,7 @@ import com.kolyma.adventure.model.Resource;
 public class ItemCombinationMapper {
 
     public static ItemCombinationDTO toDTO(ItemCombination entity) {
+
         return new ItemCombinationDTO(
                 entity.getId(),
                 entity.getResource1().getId(),
@@ -17,6 +18,7 @@ public class ItemCombinationMapper {
     }
 
     public static ItemCombination toEntity(ItemCombinationDTO dto, Resource res1, Resource res2) {
+        System.out.println("Запрошены ресурсы: " + res1 + " и " + res2);
         ItemCombination entity = new ItemCombination();
         entity.setId(dto.getId());
         entity.setResource1(res1);
