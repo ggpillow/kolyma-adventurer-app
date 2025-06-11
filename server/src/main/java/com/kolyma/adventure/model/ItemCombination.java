@@ -16,11 +16,11 @@ public class ItemCombination {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "first_resource_id", nullable = false)
-    private Resource resource1;
+    private Resource firstResource;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "second_resource_id", nullable = false)
-    private Resource resource2;
+    private Resource secondResource;
 
     @Column(name = "result_item", nullable = false)
     private String resultItem;

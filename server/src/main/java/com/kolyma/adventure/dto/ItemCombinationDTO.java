@@ -10,10 +10,10 @@ public class ItemCombinationDTO {
     private Long id;
 
     @NotNull
-    private Long resource1Id;
+    private Long firstResourceId;
 
     @NotNull
-    private Long resource2Id;
+    private Long secondResourceId;
 
     @NotNull
     private String resultItem;

@@ -429,21 +429,21 @@ INSERT INTO resources(name) VALUES
 
 --Комбинации
 INSERT INTO item_combinations(first_resource_id, second_resource_id, result_item, image_items) VALUES
-(1, 3, 'Лук', 'image/items/bow.png'),
-(6, 3, 'Удочка', 'image/items/fishingRod.png'),
-(1, 2, 'Факел', 'image/items/flame.png'),
-(5, 6, 'Топор', 'image/items/axe.png'),
-(6, 1, 'Нож', 'image/items/knife.png'),
-(2, 7, 'Повязка', 'image/items/bandage.png'),
-(7, 8, 'Травяной чай', 'image/items/tea.png'),
-(2, 4, 'Рюкзак', 'image/items/backpack.png'),
-(4, 1, 'Пугало', 'image/items/scarecrow.png'),
-(9, 8, 'Готовая еда', 'image/items/madeFood.png'),
-(2, 3, 'Спальник', 'image/items/sleepingBag.png'),
-(6, 6, 'Капкан', 'image/items/trap'),
-(3, 7, 'Оберег', 'image/items/amulet.png'),
-(8, 6, 'Компас', 'image/items/compass.png'),
-(4, 4, 'Нарукавники', 'image/items/armbands.png');
+(1, 3, 'Лук', 'images/items/bow.png'),
+(6, 3, 'Удочка', 'images/items/fishingRod.png'),
+(1, 2, 'Факел', 'images/items/flame.png'),
+(5, 6, 'Топор', 'images/items/axe.png'),
+(6, 1, 'Нож', 'images/items/knife.png'),
+(2, 7, 'Повязка', 'images/items/bandage.png'),
+(7, 8, 'Травяной чай', 'images/items/tea.png'),
+(2, 4, 'Рюкзак', 'images/items/backpack.png'),
+(4, 1, 'Пугало', 'images/items/scarecrow.png'),
+(9, 8, 'Готовая еда', 'images/items/madeFood.png'),
+(2, 3, 'Спальник', 'images/items/sleepingBag.png'),
+(6, 6, 'Капкан', 'images/items/trap'),
+(3, 7, 'Оберег', 'images/items/amulet.png'),
+(8, 6, 'Компас', 'images/items/compass.png'),
+(4, 4, 'Нарукавники', 'images/items/armbands.png');
 
 -- Привязка аудиофайлов к сценариям
 INSERT INTO scenario_audio (scenario_id, audio_url) VALUES
