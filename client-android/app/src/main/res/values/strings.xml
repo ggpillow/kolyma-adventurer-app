@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">AdventureApp</string>
-    <string name="button_start">Старт</string>
-    <string name="button_settings">Настройки</string>
-    <string name="button_exit">Выход</string>
-    <string name="switch_music">Музыка</string>
-    <string name="switch_voice">Голос</string>
-</resources>
